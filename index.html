@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>人体解剖及生理学期末小白通关系统</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="progress-wrap" aria-label="复习进度">
+    <div class="progress-meta"><strong>复习进度</strong><span id="progressText">0%</span></div>
+    <div class="progress-bar"><div id="progressFill"></div></div>
+  </div>
+  <aside class="sidebar">
+    <h1>小白通关系统</h1>
+    <nav id="toc"></nav>
+  </aside>
+  <main>
+    <section class="hero" id="home">
+      <p class="eyebrow">人体解剖及生理学</p>
+      <h2>期末小白通关系统</h2>
+      <p>打开就按步骤学：先看今天方案，再按优先级进章节，最后做总自测和 2 小时冲刺。</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#plan-1day">开始 1 天冲刺</a>
+        <a class="btn" href="#plan-3day">开始 3 天稳过</a>
+        <a class="btn" href="#plan-7day">开始 7 天提分</a>
+      </div>
+      <div class="source-note">
+        <strong>资料依据：</strong>课程 PPT、期末例题、notes/、analysis/、question_bank/、final_sprint/、期末考试通关清单.docx。若资料中未明确出现，页面会降低优先级，不作为重点。
+      </div>
+    </section>
+    <section id="today" class="section">
+      <h2>一、首页：今天我该怎么复习</h2>
+      <div id="plans"></div>
+    </section>
+    <section id="map" class="section">
+      <h2>二、考试内容地图</h2>
+      <p class="section-lead">按考试优先级排，不按教材顺序排。你时间越少，越要从前往后学。</p>
+      <div id="contentMap"></div>
+    </section>
+    <section id="chapters" class="section">
+      <h2>三、章节小白学习卡片</h2>
+      <div id="chapterCards"></div>
+    </section>
+    <section id="visuals" class="section">
+      <h2>四、图像辅助理解区</h2>
+      <p class="section-lead">这里集中放最容易混的图。每张图都能回到对应章节继续学。</p>
+      <div id="visualGallery"></div>
+    </section>
+    <section id="exam" class="section">
+      <h2>五、总自测区</h2>
+      <p class="section-lead">模拟考前检测：单选 30、判断 20、填空 15、名词解释 10、简答 8。答案默认隐藏。</p>
+      <div id="totalExam"></div>
+    </section>
+    <section id="answers" class="section">
+      <h2>六、答案与解析区</h2>
+      <p class="section-lead">所有题的答案就在题目下方按钮里。做题时先别点，订正时再点。</p>
+      <div class="tip-card answer">订正规则：错题不要只写正确选项，要写“我为什么错 + 正确关键词 + 下次怎么判断”。</div>
+    </section>
+    <section id="sprint" class="section">
+      <h2>七、考前 2 小时冲刺区</h2>
+      <div id="sprintContent"></div>
+    </section>
+    <section id="memory" class="section">
+      <h2>八、背诵秘诀区</h2>
+      <div id="memoryMethods"></div>
+    </section>
+    <section id="finalChecklist" class="section">
+      <h2>九、最后通关 checklist</h2>
+      <div id="globalChecklist" class="check-grid"></div>
+    </section>
+  </main>
+  <button class="to-top" onclick="location.hash='home'" aria-label="回到顶部">↑</button>
+  <script src="script.js"></script>
+</body>
+</html>

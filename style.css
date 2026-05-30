@@ -1,4 +1,5 @@
 :root {
+  --sidebar-width: 280px;
   --bg: #f6f8fb;
   --panel: #ffffff;
   --ink: #172033;
@@ -27,7 +28,7 @@ body {
 .progress-wrap {
   position: fixed;
   top: 0;
-  left: 280px;
+  left: var(--sidebar-width);
   right: 0;
   z-index: 20;
   background: rgba(255,255,255,.94);
@@ -41,7 +42,7 @@ body {
 .sidebar {
   position: fixed;
   inset: 0 auto 0 0;
-  width: 280px;
+  width: var(--sidebar-width);
   background: #111827;
   color: white;
   padding: 22px 16px;
@@ -60,7 +61,7 @@ body {
 .toc-group { margin: 10px 0; padding-top: 8px; border-top: 1px solid rgba(255,255,255,.12); }
 .toc-label { color: #93c5fd; font-size: 12px; margin: 0 0 4px 10px; }
 main {
-  margin-left: 280px;
+  margin-left: var(--sidebar-width);
   padding: 78px 26px 60px;
   max-width: 1420px;
 }
@@ -159,6 +160,7 @@ h4 { margin: 18px 0 8px; font-size: 16px; }
   padding: 10px 12px;
 }
 .must-list li::before { content: "必背 " counter(must) "："; font-weight: 800; color: var(--red); }
+.must-list li::before { content: "必背 " counter(must) "："; }
 table { width: 100%; border-collapse: collapse; margin: 10px 0 16px; background: white; }
 th, td { border: 1px solid var(--line); padding: 9px 10px; vertical-align: top; }
 th { background: var(--blue-soft); color: #173b7a; text-align: left; }
@@ -227,13 +229,38 @@ input[type="checkbox"] { width: 18px; height: 18px; flex: 0 0 auto; margin-top: 
   color: white;
 }
 @media (max-width: 980px) {
-  .sidebar { position: static; width: auto; max-height: none; }
-  .progress-wrap { left: 0; }
-  main { margin-left: 0; padding: 72px 12px 40px; }
+  :root { --sidebar-width: clamp(118px, 34vw, 176px); }
+  body { font-size: 14px; }
+  .sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: var(--sidebar-width);
+    padding: 12px 8px;
+  }
+  .sidebar h1 { font-size: 14px; line-height: 1.25; margin-bottom: 10px; }
+  .sidebar a { font-size: 12px; padding: 6px 7px; }
+  .toc-label { font-size: 11px; margin-left: 7px; }
+  .progress-wrap { left: var(--sidebar-width); padding: 5px 8px 7px; }
+  .progress-meta { font-size: 11px; }
+  .progress-bar { height: 6px; }
+  main { margin-left: var(--sidebar-width); padding: 48px 8px 36px; }
+  .hero, .section { padding: 12px; margin-bottom: 12px; border-radius: 6px; }
+  h2 { font-size: 20px; }
+  h3 { font-size: 17px; }
+  h4 { font-size: 15px; }
   .plan-grid, .map-grid, .two-col, .three-col { grid-template-columns: 1fr; }
   .chapter-head { grid-template-columns: 1fr; }
   .action-row { justify-content: flex-start; }
   .step { grid-template-columns: 1fr; }
+  .btn, button { min-height: 36px; padding: 7px 9px; font-size: 13px; }
+  .plan-card, .map-card, .chapter-card, .visual-card, .question-card, .method-card { padding: 11px; }
+  table { display: block; overflow-x: auto; font-size: 12px; }
+  th, td { padding: 7px 8px; min-width: 100px; }
+  .flow { min-width: 420px; gap: 6px; }
+  .node { min-width: 82px; padding: 9px 6px; font-size: 12px; }
+  .arrow { font-size: 18px; }
+  .pill { font-size: 11px; padding: 3px 7px; }
+  .to-top { width: 36px; height: 36px; right: 10px; bottom: 10px; }
 }
 @media print {
   .sidebar, .progress-wrap, .to-top, .hero-actions, button, .action-row { display: none !important; }

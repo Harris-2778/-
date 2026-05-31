@@ -10,7 +10,7 @@
 如果已开启 GitHub Pages，访问地址通常是：
 
 ```text
-https://你的用户名.github.io/仓库名/
+https://harris-2778.github.io/-/
 ```
 
 手机端也可以打开。建议在手机浏览器中选择“添加到主屏幕”，之后可以像 App 一样使用。

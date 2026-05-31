@@ -189,6 +189,34 @@ th { background: var(--blue-soft); color: #173b7a; text-align: left; }
 }
 .arrow { color: var(--gold); font-size: 26px; font-weight: 900; }
 .question-card { margin: 10px 0; border-left: 4px solid var(--purple); }
+.bank-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin: 10px 0 14px;
+}
+.bank-controls select, .bank-controls input[type="search"] {
+  min-height: 40px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px 10px;
+  background: white;
+  color: var(--ink);
+}
+.bank-controls input[type="search"] { min-width: min(100%, 260px); }
+.bank-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 8px 0 12px;
+}
+.bank-question {
+  margin: 10px 0;
+  border-left: 4px solid var(--line);
+}
+.bank-question.high { border-left-color: var(--red); background: #fffafa; }
+.bank-question.hidden { display: none; }
 .answer-box {
   display: none;
   margin-top: 10px;
@@ -253,6 +281,8 @@ input[type="checkbox"] { width: 18px; height: 18px; flex: 0 0 auto; margin-top: 
   .action-row { justify-content: flex-start; }
   .step { grid-template-columns: 1fr; }
   .btn, button { min-height: 36px; padding: 7px 9px; font-size: 13px; }
+  .bank-controls { align-items: stretch; }
+  .bank-controls select, .bank-controls input[type="search"], .bank-controls .btn, .bank-controls button { width: 100%; }
   .plan-card, .map-card, .chapter-card, .visual-card, .question-card, .method-card { padding: 11px; }
   table { display: block; overflow-x: auto; font-size: 12px; }
   th, td { padding: 7px 8px; min-width: 100px; }
